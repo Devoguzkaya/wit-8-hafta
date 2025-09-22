@@ -10,7 +10,7 @@ export default function Footer() {
           </h1>
           <div className="contact-item">
             <img
-              src="images\iteration-2-images\footer\icons\icon-1.png"
+              src="/images/iteration-2-images/footer/icons/icon-1.png"
               alt="adres"
             />
             <p>
@@ -21,14 +21,14 @@ export default function Footer() {
           </div>
           <div className="contact-item">
             <img
-              src="images\iteration-2-images\footer\icons\icon-2.png"
+              src="/images/iteration-2-images/footer/icons/icon-2.png"
               alt="mail"
             />
             <p>aciktim@teknolojikyemekler.com</p>
           </div>
           <div className="contact-item">
             <img
-              src="images\iteration-2-images\footer\icons\icon-3.png"
+              src="/images/iteration-2-images/footer/icons/icon-3.png"
               alt="telefon"
             />
             <p>+90 216 123 45 67</p>
@@ -50,37 +50,37 @@ export default function Footer() {
           <ul>
             <li>
               <img
-                src="iteration-2/footer/insta/li-0.png"
+                src="/images/iteration-2-images/footer/insta/li-0.png"
                 alt="Instagram post 1"
               />
             </li>
             <li>
               <img
-                src="iteration-2/footer/insta/li-1.png"
+                src="/images/iteration-2-images/footer/insta/li-1.png"
                 alt="Instagram post 2"
               />
             </li>
             <li>
               <img
-                src="public/assets/iteration-2/footer/insta/li-2.png"
+                src="/images/iteration-2-images/footer/insta/li-2.png"
                 alt="Instagram post 3"
               />
             </li>
             <li>
               <img
-                src="public/assets/iteration-2/footer/insta/li-3.png"
+                src="/images/iteration-2-images/footer/insta/li-3.png"
                 alt="Instagram post 4"
               />
             </li>
             <li>
               <img
-                src="public/assets/iteration-2/footer/insta/li-4.png"
+                src="/images/iteration-2-images/footer/insta/li-4.png"
                 alt="Instagram post 5"
               />
             </li>
             <li>
               <img
-                src="public/assets/iteration-2/footer/insta/li-5.png"
+                src="/images/iteration-2-images/footer/insta/li-5.png"
                 alt="Instagram post 6"
               />
             </li>

@@ -64,10 +64,6 @@ export default function Header() {
               </nav>
             </header>
           }
-          {/* Örnek minimal logo: */}
-          <Link to="/" className="brand">
-            Teknolojik Yemekler
-          </Link>
         </div>
       </div>
     </header>
