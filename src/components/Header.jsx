@@ -16,7 +16,11 @@ export default function Header() {
                   <br />
                   PIZZA, DOYURUR
                 </h1>
-                <button className="btn">ACIKTIM</button>
+                <button className="btn">
+                  <Link to="/order" className="aciktim-button">
+                    Acıktım
+                  </Link>
+                </button>
               </div>
               <nav className="nav-1">
                 <a href="#">
