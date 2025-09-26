@@ -26,6 +26,7 @@ export default function OrderForm({ setOrderData }) {
   ];
 
   const [formData, setFormData] = useState({
+    name: "", // New field
     size: "",
     hamur: "",
     toppings: [],
@@ -36,6 +37,13 @@ export default function OrderForm({ setOrderData }) {
   const [errors, setErrors] = useState({});
   const [totalPrice, setTotalPrice] = useState(basePrice);
 
+  const isFormValid =
+    formData.name.length >= 3 &&
+    !!formData.size &&
+    !!formData.hamur &&
+    formData.toppings.length >= 4 &&
+    formData.toppings.length <= 10;
+
   useEffect(() => {
     const total =
       (basePrice + formData.toppings.length * toppingPrice) * formData.quantity;
@@ -44,17 +52,29 @@ export default function OrderForm({ setOrderData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = {};
 
-    if (!formData.size) validationErrors.size = "Pizza boyutu seçin";
-    if (!formData.hamur) validationErrors.hamur = "Hamur kalınlığı seçin";
-    if (formData.toppings.length < 4)
-      validationErrors.toppings = "En az 4 malzeme seçin";
-
-    if (!formData.size || !formData.hamur || formData.toppings.length < 4) {
+    if (!isFormValid) {
+      const validationErrors = {};
+      if (formData.name.length < 3) {
+        validationErrors.name = "Adınız en az 3 karakter olmalı";
+      }
+      if (!formData.size) {
+        validationErrors.size = "Pizza boyutu seçin";
+      }
+      if (!formData.hamur) {
+        validationErrors.hamur = "Hamur kalınlığı seçin";
+      }
+      if (formData.toppings.length < 4) {
+        validationErrors.toppings = "En az 4 malzeme seçin";
+      }
+      if (formData.toppings.length > 10) {
+        validationErrors.toppings = "En fazla 10 malzeme seçebilirsiniz.";
+      }
       setErrors(validationErrors);
       return;
     }
+
+    setErrors({}); // Clear errors on successful validation
 
     const payload = {
       ...formData,
@@ -127,13 +147,36 @@ export default function OrderForm({ setOrderData }) {
             </div>
             <p className="picerik">
               Frontend Dev olarak hala position:absolute kullanıyorsan bu çok
-              acı pizza tam sana göre...
+              acı pizza tam sana göre. Pizza, domates, peynir ve genellikle
+              çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
+              odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle
+              yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan
+              İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
+              pizzetta denir.
             </p>
           </div>
         </section>
 
         <div className="order-form-container">
           <form onSubmit={handleSubmit}>
+            {/* İsim Inputu */}
+            <div className="form-section name-section">
+              <label htmlFor="name" className="section-title form-label">Adınız Soyadınız</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="name-input styled-input"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+              />
+              {errors.name && (
+                <div className="error-message">{errors.name}</div>
+              )}
+            </div>
+
             {/* Boyut ve Hamur */}
             <div className="size-hamur-container">
               <div className="size-section">
@@ -222,7 +265,7 @@ export default function OrderForm({ setOrderData }) {
                 onChange={(e) =>
                   setFormData({ ...formData, notes: e.target.value })
                 }
-                rows="1"
+                rows="2"
                 style={{ resize: "none" }}
               />
               <hr />
@@ -265,7 +308,7 @@ export default function OrderForm({ setOrderData }) {
                   <span>{totalPrice}₺</span>
                 </div>
 
-                <button type="submit" className="order-button">
+                <button type="submit" className="order-button" disabled={!isFormValid}>
                   SİPARİŞ VER
                 </button>
               </div>

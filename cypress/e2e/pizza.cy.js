@@ -15,6 +15,7 @@ describe("Pizza Sipariş Formu Testleri", () => {
 
   it("Formu başarıyla gönderebilmelidir", () => {
     // Gerekli alanları doldur
+    cy.get('#name').type('Test Kullanıcısı');
     cy.contains('.radio-option', 'M').click();
     cy.get('.hamur-select').select("ince");
     cy.get('.toppings-grid input[type="checkbox"]').check([
