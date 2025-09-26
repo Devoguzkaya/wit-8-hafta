@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import axios from "axios";
 
 export default function OrderForm({ setOrderData }) {
   const navigate = useNavigate();
@@ -46,29 +48,49 @@ export default function OrderForm({ setOrderData }) {
 
     if (!formData.size) validationErrors.size = "Pizza boyutu seçin";
     if (!formData.hamur) validationErrors.hamur = "Hamur kalınlığı seçin";
-    if (formData.toppings.length === 0)
-      validationErrors.toppings = "En az bir malzeme seçin";
+    if (formData.toppings.length < 4)
+      validationErrors.toppings = "En az 4 malzeme seçin";
 
-    if (Object.keys(validationErrors).length > 0) {
+    if (!formData.size || !formData.hamur || formData.toppings.length < 4) {
       setErrors(validationErrors);
       return;
     }
 
-    const response = {
+    const payload = {
       ...formData,
-      totalPrice: totalPrice.toFixed(2),
-      id: Math.floor(Math.random() * 1000),
+      totalPrice: totalPrice,
     };
-    setOrderData(response);
-    navigate("/success");
+
+    // ✅ Axios request
+    axios
+      .post("https://reqres.in/api/pizza", payload, {
+        headers: {
+          "x-api-key": "reqres-free-v1",
+        },
+      })
+      .then((res) => {
+        console.log("API Response:", res.data);
+        setOrderData(res.data);
+        navigate("/success", {
+          state: { orderData: res.data },
+        });
+      })
+      .catch((err) => {
+        console.error("API Error:", err);
+        alert("Sipariş gönderilemedi, lütfen internet bağlantını kontrol et.");
+      });
   };
 
-  const handleQuantityChange = (operation) => {
-    if (operation === "increment") {
-      setFormData({ ...formData, quantity: formData.quantity + 1 });
-    } else if (operation === "decrement" && formData.quantity > 1) {
-      setFormData({ ...formData, quantity: formData.quantity - 1 });
-    }
+  const handleQuantityChange = (type) => {
+    setFormData((prevFormData) => {
+      let newQuantity = prevFormData.quantity;
+      if (type === "increment") {
+        newQuantity += 1;
+      } else if (type === "decrement" && newQuantity > 1) {
+        newQuantity -= 1;
+      }
+      return { ...prevFormData, quantity: newQuantity };
+    });
   };
 
   return (
@@ -105,12 +127,7 @@ export default function OrderForm({ setOrderData }) {
             </div>
             <p className="picerik">
               Frontend Dev olarak hala position:absolute kullanıyorsan bu çok
-              acı pizza tam sana göre. Pizza, domates, peynir ve genellikle
-              çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
-              odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle
-              yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan
-              İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
-              pizzetta denir.
+              acı pizza tam sana göre...
             </p>
           </div>
         </section>
@@ -177,6 +194,7 @@ export default function OrderForm({ setOrderData }) {
                   <label key={topping} className="topping-item">
                     <input
                       type="checkbox"
+                      value={topping}
                       checked={formData.toppings.includes(topping)}
                       onChange={(e) => {
                         const newToppings = e.target.checked
@@ -204,7 +222,10 @@ export default function OrderForm({ setOrderData }) {
                 onChange={(e) =>
                   setFormData({ ...formData, notes: e.target.value })
                 }
+                rows="1"
+                style={{ resize: "none" }}
               />
+              <hr />
             </div>
 
             {/* Miktar ve Toplam */}
@@ -233,17 +254,15 @@ export default function OrderForm({ setOrderData }) {
                 <div className="selections-price">
                   <span>Seçimler</span>
                   <span>
-                    {(
-                      formData.toppings.length *
+                    {formData.toppings.length *
                       toppingPrice *
-                      formData.quantity
-                    ).toFixed(2)}
+                      formData.quantity}
                     ₺
                   </span>
                 </div>
                 <div className="total-price">
                   <span>Toplam</span>
-                  <span>{totalPrice.toFixed(2)}₺</span>
+                  <span>{totalPrice}₺</span>
                 </div>
 
                 <button type="submit" className="order-button">
@@ -254,6 +273,7 @@ export default function OrderForm({ setOrderData }) {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

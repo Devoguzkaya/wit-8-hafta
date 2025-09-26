@@ -186,7 +186,6 @@ main {
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  color: red;
 }
 .redtext {
   color: #ff0000;
@@ -488,11 +487,10 @@ footer h3 {
 }
 /* ==== Order Form Genel ==== */
 .order-form-container {
-  max-width: 600px;
+  width: 35%;
   margin: 50px auto;
   padding: 2rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+
   background: #fff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -678,7 +676,7 @@ footer h3 {
 }
 
 .quantity-btn:hover:not(:disabled) {
-  background-color: #f0f0f0;
+  background-color: #fdc913; /* Change to yellow */
 }
 
 .quantity-btn:disabled {
@@ -860,4 +858,97 @@ footer h3 {
   .end {
     width: 100%;
   }
+}
+
+.success-container {
+  background-color: #CE2829;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Barlow", sans-serif;
+  padding: 2rem;
+  text-align: center;
+}
+.success-h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Londrina Solid", sans-serif;
+  margin-bottom: 60px;
+}
+.success-slogan {
+  color: #FDC913;
+  font-family: "Satisfy", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.success-h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+}
+.success-divider {
+  width: 100%;
+  max-width: 400px;
+  border-color: white;
+  margin: 1rem 0;
+}
+.success-pizza-title {
+  font-weight: bold;
+  text-align: left;
+}
+.order-details-container {
+  margin-top: 1rem;
+}
+.order-detail-item {
+  text-align: left;
+  margin-bottom: 20px; /* Add 20px bottom margin */
+}
+
+.order-detail-item:last-child {
+  margin-bottom: 0; /* Remove bottom margin from the last item */
+}
+.highlight-text {
+  color: #FDC913;
+}
+.bold-text {
+  font-weight: bold;
+}
+.order-summary-card {
+  border: 1px solid white;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  min-width: 200px;
+  display: flex; /* Add flex display */
+  flex-direction: column; /* Stack items vertically */
+  gap: 10px; /* Add 10px gap between items */
+}
+.order-summary-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+.order-summary-row {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.order-total-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+}
+.back-to-home-link {
+  margin-top: 2rem;
+  color: white;
+  text-decoration: underline;
+}
+.aciktim-button {
+  color: black;
 }

@@ -8,6 +8,7 @@ function Home() {
     <>
       <Header />
       <main>
+        {/* Section 1 - Hero Alanı */}
         <section className="section-1">
           <article className="main-section-left">
             <div>
@@ -41,96 +42,75 @@ function Home() {
           </div>
         </section>
 
+        {/* Section 2 - Menü Kategorileri */}
         <section className="section-2">
           <div>
             <h2>en çok paketlenen menüler</h2>
             <h1>Acıktıran Kodlara Doyuran Lezzetler</h1>
           </div>
+
           <nav className="nav-2">
-            <a href="#">
-              <img src="/images/iteration-2-images/icons/1.svg" alt="Ramen" />
-              Ramen
-            </a>
-            <a href="#" className="active">
-              <img src="/images/iteration-2-images/icons/2.svg" alt="Pizza" />
-              Pizza
-            </a>
-            <a href="#">
-              <img src="/images/iteration-2-images/icons/3.svg" alt="Burger" />
-              Burger
-            </a>
-            <a href="#">
-              <img
-                src="/images/iteration-2-images/icons/4.svg"
-                alt="French fries"
-              />
-              French fries
-            </a>
-            <a href="#">
-              <img
-                src="/images/iteration-2-images/icons/5.svg"
-                alt="Fast food"
-              />
-              Fast food
-            </a>
-            <a href="#">
-              <img
-                src="/images/iteration-2-images/icons/6.svg"
-                alt="Soft drinks"
-              />
-              Soft drinks
-            </a>
+            {[
+              { src: "1.svg", alt: "Ramen", label: "Ramen" },
+              { src: "2.svg", alt: "Pizza", label: "Pizza", active: true },
+              { src: "3.svg", alt: "Burger", label: "Burger" },
+              { src: "4.svg", alt: "French fries", label: "French fries" },
+              { src: "5.svg", alt: "Fast food", label: "Fast food" },
+              { src: "6.svg", alt: "Soft drinks", label: "Soft drinks" },
+            ].map((item, i) => (
+              <a href="#" key={i} className={item.active ? "active" : ""}>
+                <img
+                  src={`/images/iteration-2-images/icons/${item.src}`}
+                  alt={item.alt}
+                />
+                {item.label}
+              </a>
+            ))}
           </nav>
         </section>
 
+        {/* Section 3 - Ürün Kartları */}
         <section className="section-3" id="foods">
-          <article className="card">
-            <img
-              src="/images/iteration-2-images/pictures/food-1.png"
-              alt="Terminal Pizza"
-            />
-            <h3>Terminal Pizza</h3>
-            <div className="fiyat">
-              <p>4.9</p>
-              <div className="fiyat-sag">
-                <p className="shadow">(200)</p>
-                <p className="bold">60₺</p>
+          {[
+            {
+              img: "food-1.png",
+              title: "Terminal Pizza",
+              rating: 4.9,
+              count: 200,
+              price: "60₺",
+            },
+            {
+              img: "food-2.png",
+              title: "Position Absolute Acı Pizza",
+              rating: 4.9,
+              count: 200,
+              price: "60₺",
+            },
+            {
+              img: "food-3.png",
+              title: "useEffect Tavuklu Burger",
+              rating: 4.9,
+              count: 200,
+              price: "60₺",
+            },
+          ].map((item, i) => (
+            <article className="card" key={i}>
+              <img
+                src={`/images/iteration-2-images/pictures/${item.img}`}
+                alt={item.title}
+              />
+              <h3>{item.title}</h3>
+              <div className="fiyat">
+                <p>{item.rating}</p>
+                <div className="fiyat-sag">
+                  <p className="shadow">({item.count})</p>
+                  <p className="bold">{item.price}</p>
+                </div>
               </div>
-            </div>
-          </article>
-
-          <article className="card">
-            <img
-              src="/images/iteration-2-images/pictures/food-2.png"
-              alt="Position Absolute Acı Pizza"
-            />
-            <h3>Position Absolute Acı Pizza</h3>
-            <div className="fiyat">
-              <p>4.9</p>
-              <div className="fiyat-sag">
-                <p>(200)</p>
-                <p className="bold">60₺</p>
-              </div>
-            </div>
-          </article>
-
-          <article className="card">
-            <img
-              src="/images/iteration-2-images/pictures/food-3.png"
-              alt="useEffect Tavuklu Burger"
-            />
-            <h3>useEffect Tavuklu Burger</h3>
-            <div className="fiyat">
-              <p>4.9</p>
-              <div className="fiyat-sag">
-                <p>(200)</p>
-                <p className="bold">60₺</p>
-              </div>
-            </div>
-          </article>
+            </article>
+          ))}
         </section>
       </main>
-
       <Footer />
     </>
   );
