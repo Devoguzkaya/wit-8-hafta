@@ -19,15 +19,11 @@ export default function SuccessPage() {
 
   return (
     <div className="success-container">
-      <h1 className="success-h1">
-        Teknolojik Yemekler
-      </h1>
-      <p className="success-slogan">
-        lezzetin yolda
-      </p>
-      <h2 className="success-h2">
-        SİPARİŞ ALINDI
-      </h2>
+      <Link to="/" className="back-to-home-link">
+        <h1 className="success-h1">Teknolojik Yemekler</h1>
+      </Link>
+      <p className="success-slogan">lezzetin yolda</p>
+      <h2 className="success-h2">SİPARİŞ ALINDI</h2>
       <hr className="success-divider" />
 
       <h3 className="success-pizza-title">Position Absolute Acı Pizza</h3>
@@ -54,7 +50,7 @@ export default function SuccessPage() {
 
       <div className="order-summary-card">
         <h4 className="order-summary-title">Sipariş Toplamı</h4>
-        <p className="order-summary-row">
+        <p className="order-summary-row order-total-price">
           <span>Seçimler</span>
           <span>{secimTutari}₺</span>
         </p>
@@ -63,13 +59,6 @@ export default function SuccessPage() {
           <span>{Number(totalPrice)}₺</span>
         </p>
       </div>
-
-      <Link
-        to="/"
-        className="back-to-home-link"
-      >
-        Anasayfaya dön
-      </Link>
     </div>
   );
 }

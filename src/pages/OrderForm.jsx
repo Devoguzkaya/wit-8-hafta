@@ -81,7 +81,7 @@ export default function OrderForm({ setOrderData }) {
       totalPrice: totalPrice,
     };
 
-    // ✅ Axios request
+    //  Axios request
     axios
       .post("https://reqres.in/api/pizza", payload, {
         headers: {
@@ -161,7 +161,9 @@ export default function OrderForm({ setOrderData }) {
           <form onSubmit={handleSubmit}>
             {/* İsim Inputu */}
             <div className="form-section name-section">
-              <label htmlFor="name" className="section-title form-label">Adınız Soyadınız</label>
+              <label htmlFor="name" className="section-title form-label">
+                Adınız Soyadınız
+              </label>
               <input
                 type="text"
                 name="name"
@@ -308,7 +310,7 @@ export default function OrderForm({ setOrderData }) {
                   <span>{totalPrice}₺</span>
                 </div>
 
-                <button type="submit" className="order-button" disabled={!isFormValid}>
+                <button type="submit" className="order-button">
                   SİPARİŞ VER
                 </button>
               </div>

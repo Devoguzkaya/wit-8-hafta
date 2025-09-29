@@ -7,6 +7,14 @@ import Success from "./pages/Success";
 function App() {
   const [orderData, setOrderData] = useState(null);
 
+  // 2. Create mock data for testing the Tailwind page
+  const mockOrderData = {
+    size: "L",
+    hamur: "Kalın",
+    toppings: ["Pepperoni", "Sosis", "Mısır", "Sucuk", "Ananas"],
+    totalPrice: 125.5,
+  };
+
   return (
     <Router>
       <Routes>
