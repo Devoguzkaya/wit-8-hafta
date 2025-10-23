@@ -125,7 +125,7 @@ export default function OrderForm({ setOrderData }) {
       <div className="global-div">
         <section className="section1">
           <img
-            src="images/iteration-2-images/pictures/form-banner.png"
+            src="/images/iteration-2-images/pictures/form-banner.png"
             alt="pizza"
           />
         </section>

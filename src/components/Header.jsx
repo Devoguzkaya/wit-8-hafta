@@ -25,42 +25,42 @@ export default function Header() {
               <nav className="nav-1">
                 <a href="#">
                   <img
-                    src="\images\iteration-2-images\icons\1.svg"
+                    src="/images/iteration-2-images/icons/1.svg"
                     alt="Kore mutfağı"
                   />
                   YENİ! Kore
                 </a>
                 <a href="#">
                   <img
-                    src="\images\iteration-2-images\icons\2.svg"
+                    src="/images/iteration-2-images/icons/2.svg"
                     alt="Pizza"
                   />
                   Pizza
                 </a>
                 <a href="#">
                   <img
-                    src="\images\iteration-2-images\icons\3.svg"
+                    src="/images/iteration-2-images/icons/3.svg"
                     alt="Burger"
                   />
                   Burger
                 </a>
                 <a href="#">
                   <img
-                    src="\images\iteration-2-images\icons\4.svg"
+                    src="/images/iteration-2-images/icons/4.svg"
                     alt="Kızartmalar"
                   />
                   Kızartmalar
                 </a>
                 <a href="#">
                   <img
-                    src="\images\iteration-2-images\icons\5.svg"
+                    src="/images/iteration-2-images/icons/5.svg"
                     alt="Fast food"
                   />
                   Fast food
                 </a>
                 <a href="#">
                   <img
-                    src="\images\iteration-2-images\icons\6.svg"
+                    src="/images/iteration-2-images/icons/6.svg"
                     alt="Gazlı içecek"
                   />
                   Gazlı içecek
