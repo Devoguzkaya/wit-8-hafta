@@ -1,4 +1,10 @@
 export default function Footer() {
+import insta0 from "/images/iteration-2-images/footer/insta/li-0.png";
+import insta1 from "/images/iteration-2-images/footer/insta/li-1.png";
+import insta2 from "/images/iteration-2-images/footer/insta/li-2.png";
+import insta3 from "/images/iteration-2-images/footer/insta/li-3.png";
+import insta4 from "/images/iteration-2-images/footer/insta/li-4.png";
+import insta5 from "/images/iteration-2-images/footer/insta/li-5.png";
   return (
     <footer>
       <div className="footer-nav">
@@ -50,37 +56,37 @@ export default function Footer() {
           <ul>
             <li>
               <img
-                src="/images/iteration-2-images/footer/insta/li-0.png"
+                src={insta0}
                 alt="Instagram post 1"
               />
             </li>
             <li>
               <img
-                src="/images/iteration-2-images/footer/insta/li-1.png"
+                src={insta1}
                 alt="Instagram post 2"
               />
             </li>
             <li>
               <img
-                src="/images/iteration-2-images/footer/insta/li-2.png"
+                src={insta2}
                 alt="Instagram post 3"
               />
             </li>
             <li>
               <img
-                src="/images/iteration-2-images/footer/insta/li-3.png"
+                src={insta3}
                 alt="Instagram post 4"
               />
             </li>
             <li>
               <img
-                src="/images/iteration-2-images/footer/insta/li-4.png"
+                src={insta4}
                 alt="Instagram post 5"
               />
             </li>
             <li>
               <img
-                src="/images/iteration-2-images/footer/insta/li-5.png"
+                src={insta5}
                 alt="Instagram post 6"
               />
             </li>

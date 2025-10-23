@@ -1,4 +1,3 @@
-
 export default function PizzaSizeRadio({ formData, setFormData, errors }) {
   return (
     <div className="size-hamur-container">
@@ -22,9 +21,7 @@ export default function PizzaSizeRadio({ formData, setFormData, errors }) {
             </label>
           ))}
         </div>
-        {errors.size && (
-          <div className="error-message">{errors.size}</div>
-        )}
+        {errors.size && <div className="error-message">{errors.size}</div>}
       </div>
 
       <div className="hamur-section">
@@ -34,18 +31,14 @@ export default function PizzaSizeRadio({ formData, setFormData, errors }) {
         <select
           className="hamur-select"
           value={formData.hamur}
-          onChange={(e) =>
-            setFormData({ ...formData, hamur: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, hamur: e.target.value })}
         >
           <option value="">-- Hamur Kalınlığı Seç --</option>
-          <option value="ince">İnce Hamur</option>
-          <option value="orta">Orta Hamur</option>
-          <option value="kalin">Kalın Hamur</option>
+          <option value="İnce">İnce Hamur</option>
+          <option value="Orta">Orta Hamur</option>
+          <option value="Kalın">Kalın Hamur</option>
         </select>
-        {errors.hamur && (
-          <div className="error-message">{errors.hamur}</div>
-        )}
+        {errors.hamur && <div className="error-message">{errors.hamur}</div>}
       </div>
     </div>
   );

@@ -1,5 +1,11 @@
 // src/components/Header.jsx
 import { Link, NavLink } from "react-router-dom";
+import icon1 from "/images/iteration-2-images/icons/1.svg";
+import icon2 from "/images/iteration-2-images/icons/2.svg";
+import icon3 from "/images/iteration-2-images/icons/3.svg";
+import icon4 from "/images/iteration-2-images/icons/4.svg";
+import icon5 from "/images/iteration-2-images/icons/5.svg";
+import icon6 from "/images/iteration-2-images/icons/6.svg";
 
 export default function Header() {
   return (
@@ -25,42 +31,42 @@ export default function Header() {
               <nav className="nav-1">
                 <a href="#">
                   <img
-                    src="/images/iteration-2-images/icons/1.svg"
+                    src={icon1}
                     alt="Kore mutfağı"
                   />
                   YENİ! Kore
                 </a>
                 <a href="#">
                   <img
-                    src="/images/iteration-2-images/icons/2.svg"
+                    src={icon2}
                     alt="Pizza"
                   />
                   Pizza
                 </a>
                 <a href="#">
                   <img
-                    src="/images/iteration-2-images/icons/3.svg"
+                    src={icon3}
                     alt="Burger"
                   />
                   Burger
                 </a>
                 <a href="#">
                   <img
-                    src="/images/iteration-2-images/icons/4.svg"
+                    src={icon4}
                     alt="Kızartmalar"
                   />
                   Kızartmalar
                 </a>
                 <a href="#">
                   <img
-                    src="/images/iteration-2-images/icons/5.svg"
+                    src={icon5}
                     alt="Fast food"
                   />
                   Fast food
                 </a>
                 <a href="#">
                   <img
-                    src="/images/iteration-2-images/icons/6.svg"
+                    src={icon6}
                     alt="Gazlı içecek"
                   />
                   Gazlı içecek

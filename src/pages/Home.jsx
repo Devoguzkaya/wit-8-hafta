@@ -2,6 +2,12 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import icon1 from "/images/iteration-2-images/icons/1.svg";
+import icon2 from "/images/iteration-2-images/icons/2.svg";
+import icon3 from "/images/iteration-2-images/icons/3.svg";
+import icon4 from "/images/iteration-2-images/icons/4.svg";
+import icon5 from "/images/iteration-2-images/icons/5.svg";
+import icon6 from "/images/iteration-2-images/icons/6.svg";
 
 function Home() {
   return (
@@ -50,16 +56,16 @@ function Home() {
 
           <nav className="nav-2">
             {[
-              { src: "1.svg", alt: "Ramen", label: "Ramen" },
-              { src: "2.svg", alt: "Pizza", label: "Pizza", active: true },
-              { src: "3.svg", alt: "Burger", label: "Burger" },
-              { src: "4.svg", alt: "French fries", label: "French fries" },
-              { src: "5.svg", alt: "Fast food", label: "Fast food" },
-              { src: "6.svg", alt: "Soft drinks", label: "Soft drinks" },
+              { src: icon1, alt: "Ramen", label: "Ramen" },
+              { src: icon2, alt: "Pizza", label: "Pizza", active: true },
+              { src: icon3, alt: "Burger", label: "Burger" },
+              { src: icon4, alt: "French fries", label: "French fries" },
+              { src: icon5, alt: "Fast food", label: "Fast food" },
+              { src: icon6, alt: "Soft drinks", label: "Soft drinks" },
             ].map((item, i) => (
               <a href="#" key={i} className={item.active ? "active" : ""}>
                 <img
-                  src={`/images/iteration-2-images/icons/${item.src}`}
+                  src={item.src}
                   alt={item.alt}
                 />
                 {item.label}
