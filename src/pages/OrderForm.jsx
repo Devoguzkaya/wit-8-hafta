@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import axios from "axios";
+import InputField from "../components/InputField";
+import PizzaSizeRadio from "../components/PizzaSizeRadio";
+import TappingCheckbox from "../components/TappingCheckbox";
 
 export default function OrderForm({ setOrderData }) {
   const navigate = useNavigate();
@@ -74,7 +77,7 @@ export default function OrderForm({ setOrderData }) {
       return;
     }
 
-    setErrors({}); // Clear errors on successful validation
+    setErrors({}); 
 
     const payload = {
       ...formData,
@@ -159,105 +162,9 @@ export default function OrderForm({ setOrderData }) {
 
         <div className="order-form-container">
           <form onSubmit={handleSubmit}>
-            {/* İsim Inputu */}
-            <div className="form-section name-section">
-              <label htmlFor="name" className="section-title form-label">
-                Adınız Soyadınız
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="name-input styled-input"
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-              />
-              {errors.name && (
-                <div className="error-message">{errors.name}</div>
-              )}
-            </div>
-
-            {/* Boyut ve Hamur */}
-            <div className="size-hamur-container">
-              <div className="size-section">
-                <div className="section-title">
-                  Boyut Seç <span style={{ color: "red" }}>*</span>
-                </div>
-                <div className="radio-group">
-                  {["S", "M", "L"].map((size) => (
-                    <label key={size} className="radio-option">
-                      <input
-                        type="radio"
-                        name="size"
-                        value={size}
-                        checked={formData.size === size}
-                        onChange={(e) =>
-                          setFormData({ ...formData, size: e.target.value })
-                        }
-                      />
-                      <span>{size}</span>
-                    </label>
-                  ))}
-                </div>
-                {errors.size && (
-                  <div className="error-message">{errors.size}</div>
-                )}
-              </div>
-
-              <div className="hamur-section">
-                <div className="section-title">
-                  Hamur Seç <span style={{ color: "red" }}>*</span>
-                </div>
-                <select
-                  className="hamur-select"
-                  value={formData.hamur}
-                  onChange={(e) =>
-                    setFormData({ ...formData, hamur: e.target.value })
-                  }
-                >
-                  <option value="">-- Hamur Kalınlığı Seç --</option>
-                  <option value="ince">İnce Hamur</option>
-                  <option value="orta">Orta Hamur</option>
-                  <option value="kalin">Kalın Hamur</option>
-                </select>
-                {errors.hamur && (
-                  <div className="error-message">{errors.hamur}</div>
-                )}
-              </div>
-            </div>
-
-            {/* Ek Malzemeler */}
-            <div className="form-section toppings-section">
-              <div className="section-title">Ek Malzemeler</div>
-              <div className="toppings-subtitle">
-                En Fazla 10 malzeme seçebilirsiniz. 5₺
-              </div>
-              <div className="toppings-grid">
-                {toppingsList.map((topping) => (
-                  <label key={topping} className="topping-item">
-                    <input
-                      type="checkbox"
-                      value={topping}
-                      checked={formData.toppings.includes(topping)}
-                      onChange={(e) => {
-                        const newToppings = e.target.checked
-                          ? [...formData.toppings, topping]
-                          : formData.toppings.filter((t) => t !== topping);
-                        setFormData({ ...formData, toppings: newToppings });
-                      }}
-                    />
-                    <span>{topping}</span>
-                  </label>
-                ))}
-              </div>
-              {errors.toppings && (
-                <div className="error-message">{errors.toppings}</div>
-              )}
-            </div>
-
-            {/* Sipariş Notu */}
+            <InputField formData={formData} setFormData={setFormData} errors={errors} />
+            <PizzaSizeRadio formData={formData} setFormData={setFormData} errors={errors} />
+            <TappingCheckbox formData={formData} setFormData={setFormData} errors={errors} toppingsList={toppingsList} />
             <div className="form-section notes-section">
               <div className="section-title">Sipariş Notu</div>
               <textarea
@@ -269,11 +176,12 @@ export default function OrderForm({ setOrderData }) {
                 }
                 rows="2"
                 style={{ resize: "none" }}
+                data-cy="notes-textarea"
               />
               <hr />
             </div>
 
-            {/* Miktar ve Toplam */}
+           
             <div className="quantity-total-wrapper">
               <div className="quantity-controls">
                 <button

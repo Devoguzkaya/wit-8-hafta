@@ -8,7 +8,6 @@ function Home() {
     <>
       <Header />
       <main>
-        {/* Section 1 - Hero Alanı */}
         <section className="section-1">
           <article className="main-section-left">
             <div>
@@ -42,7 +41,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Section 2 - Menü Kategorileri */}
+      
         <section className="section-2">
           <div>
             <h2>en çok paketlenen menüler</h2>
@@ -69,7 +68,7 @@ function Home() {
           </nav>
         </section>
 
-        {/* Section 3 - Ürün Kartları */}
+    
         <section className="section-3" id="foods">
           {[
             {

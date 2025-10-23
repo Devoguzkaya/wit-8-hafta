@@ -118,7 +118,7 @@ main {
   background-image: url("images/iteration-2-images/cta/kart-1.png");
   background-size: cover;
   display: flex;
-  justify-content: flex-start; /* Align to top */
+  justify-content: flex-start; 
   border-radius: 12px;
   color: white;
   flex-direction: column;
@@ -129,7 +129,7 @@ main {
   padding: 3.125rem;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Add 20px gap */
+  gap: 20px; 
 }
 
 .main-section-left h1,
@@ -188,13 +188,13 @@ main {
   padding: 0.9375rem 0;
   width: 8.625rem;
   text-align: center;
-  background-color: white; /* Revert background to white */
+  background-color: white;
   border-radius: 3.125rem;
   font-family: Barlow, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  color: #ce2829; /* Set text color to red */
+  color: #ce2829;
 }
 .redtext {
   color: #ff0000;
@@ -494,7 +494,7 @@ footer h3 {
   margin: 40px auto 40px auto;
   line-height: 2rem;
 }
-/* ==== Order Form Genel ==== */
+
 .order-form-container {
   width: 35%;
   margin: 50px auto;
@@ -515,7 +515,7 @@ footer h3 {
   color: #333;
 }
 
-/* ==== Boyut & Hamur ==== */
+
 .size-hamur-container {
   display: flex;
   gap: 30px;
@@ -572,7 +572,7 @@ footer h3 {
   cursor: pointer;
 }
 
-/* ==== Ek Malzemeler ==== */
+
 .toppings-section {
   margin-bottom: 30px;
 }
@@ -628,7 +628,7 @@ footer h3 {
   font-weight: bold;
 }
 
-/* ==== Not Alanı ==== */
+
 .notes-textarea {
   width: 100%;
   min-height: 80px;
@@ -639,14 +639,14 @@ footer h3 {
   font-family: inherit;
   resize: vertical;
   background-color: #f8f8f8;
-  margin-bottom: 20px; /* Add 20px bottom margin */
+  margin-bottom: 20px;
 }
 
 .notes-textarea::placeholder {
   color: #999;
 }
 
-/* ==== Quantity + Total ==== */
+
 .quantity-total-wrapper {
   display: flex;
   align-items: flex-start;
@@ -655,7 +655,7 @@ footer h3 {
   margin: 30px 0;
 }
 
-/* Sol kutu */
+
 .quantity-controls {
   display: inline-flex;
   align-items: center;
@@ -686,7 +686,7 @@ footer h3 {
 }
 
 .quantity-btn:hover:not(:disabled) {
-  background-color: #fdc913; /* Change to yellow */
+  background-color: #fdc913; 
 }
 
 .quantity-btn:disabled {
@@ -694,7 +694,7 @@ footer h3 {
   cursor: not-allowed;
 }
 
-/* Sağ kart */
+
 .total-card {
   flex: 1;
   background-color: #faf7f2;
@@ -729,7 +729,7 @@ footer h3 {
   margin-bottom: 20px;
 }
 
-/* Full-bleed buton kartın içinde */
+
 .total-card .order-button {
   display: block;
   width: calc(100% + 40px);
@@ -757,7 +757,7 @@ footer h3 {
   cursor: not-allowed;
 }
 
-/* ==== Error Mesajları ==== */
+
 .error-message {
   color: #d63031;
   font-size: 12px;
@@ -884,7 +884,7 @@ footer h3 {
     width: 100%;
   }
 
-  /* Order Form Responsive Styles */
+  
   .order-form-container {
     width: 90%;
     padding: 1rem;
@@ -915,7 +915,7 @@ footer h3 {
     align-items: stretch;
   }
 
-  /* Success Page Responsive Styles */
+  
   .success-divider {
     width: 90%;
   }
@@ -975,11 +975,11 @@ footer h3 {
 .order-detail-item {
   font-size: medium;
   text-align: left;
-  margin-bottom: 20px; /* Add 20px bottom margin */
+  margin-bottom: 20px; 
 }
 
 .order-detail-item:last-child {
-  margin-bottom: 0; /* Remove bottom margin from the last item */
+  margin-bottom: 0; 
 }
 .highlight-text {
   color: #fdc913;
