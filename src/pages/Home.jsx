@@ -8,6 +8,9 @@ import icon3 from "/images/iteration-2-images/icons/3.svg";
 import icon4 from "/images/iteration-2-images/icons/4.svg";
 import icon5 from "/images/iteration-2-images/icons/5.svg";
 import icon6 from "/images/iteration-2-images/icons/6.svg";
+import food1 from "/images/iteration-2-images/pictures/food-1.png";
+import food2 from "/images/iteration-2-images/pictures/food-2.png";
+import food3 from "/images/iteration-2-images/pictures/food-3.png";
 
 function Home() {
   return (
@@ -78,21 +81,21 @@ function Home() {
         <section className="section-3" id="foods">
           {[
             {
-              img: "food-1.png",
+              img: food1,
               title: "Terminal Pizza",
               rating: 4.9,
               count: 200,
               price: "60₺",
             },
             {
-              img: "food-2.png",
+              img: food2,
               title: "Position Absolute Acı Pizza",
               rating: 4.9,
               count: 200,
               price: "60₺",
             },
             {
-              img: "food-3.png",
+              img: food3,
               title: "useEffect Tavuklu Burger",
               rating: 4.9,
               count: 200,
@@ -101,7 +104,7 @@ function Home() {
           ].map((item, i) => (
             <article className="card" key={i}>
               <img
-                src={`/images/iteration-2-images/pictures/${item.img}`}
+                src={item.img}
                 alt={item.title}
               />
               <h3>{item.title}</h3>

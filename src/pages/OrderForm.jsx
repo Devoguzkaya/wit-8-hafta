@@ -7,6 +7,7 @@ import axios from "axios";
 import InputField from "../components/InputField";
 import PizzaSizeRadio from "../components/PizzaSizeRadio";
 import TappingCheckbox from "../components/TappingCheckbox";
+import formBanner from "/images/iteration-2-images/pictures/form-banner.png";
 
 export default function OrderForm({ setOrderData }) {
   const navigate = useNavigate();
@@ -125,7 +126,7 @@ export default function OrderForm({ setOrderData }) {
       <div className="global-div">
         <section className="section1">
           <img
-            src="/images/iteration-2-images/pictures/form-banner.png"
+            src={formBanner}
             alt="pizza"
           />
         </section>
