@@ -115,7 +115,7 @@ main {
 
 .main-section-left {
   flex: 1;
-  background-image: url("images/iteration-2-images/cta/kart-1.png");
+  background-image: url("/images/iteration-2-images/cta/kart-1.png");
   background-size: cover;
   display: flex;
   justify-content: flex-start; 
@@ -157,7 +157,7 @@ main {
   color: white;
 }
 .main-section-right-top {
-  background-image: url("images/iteration-2-images/cta/kart-2.png");
+  background-image: url("/images/iteration-2-images/cta/kart-2.png");
   background-size: cover;
   width: 100%;
   display: flex;
@@ -171,7 +171,7 @@ main {
 }
 
 .main-section-right-bot {
-  background-image: url("images/iteration-2-images/cta/kart-3.png");
+  background-image: url("/images/iteration-2-images/cta/kart-3.png");
   background-size: cover;
   padding: 3rem 2rem;
   width: 100%;
